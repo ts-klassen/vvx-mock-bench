@@ -121,19 +121,19 @@ evaluate(Id) ->
 %% package private
 
 config(task_count) ->
-    100000;
+    application:get_env(vxmb, task_count, 100000);
 config(overhead) ->
-    3000;
+    application:get_env(vxmb, overhead, 3000);
 config(engine_count) ->
-    4;
+    application:get_env(vxmb, engine_count, 4);
 config(speaker_count) ->
-    255;
+    application:get_env(vxmb, speaker_count, 255);
 config(sleep_min) ->
-    100;
+    application:get_env(vxmb, sleep_min, 100);
 config(sleep_max) ->
-    10000;
+    application:get_env(vxmb, sleep_max, 10000);
 config(nbf_uniform) ->
-    10000;
+    application:get_env(vxmb, nbf_uniform, 10000);
 config(Arg1) ->
     erlang:error(badarg, Arg1).
 
