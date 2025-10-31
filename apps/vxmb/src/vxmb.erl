@@ -38,8 +38,8 @@
 -type engine_id() :: non_neg_integer().
 
 -type task() :: #{
-        speaker_id => maps:get(speaker_id, Elem)
-      , payload => maps:get(payload, Elem)
+        speaker_id := speaker_id()
+      , payload := task_id()
     }.
 
 -type state() :: #{
@@ -105,7 +105,7 @@ config() ->
       , speaker_count => config(speaker_count)
     }.
 
--spec evaluate(id()) -> non_neg_integer().
+-spec evaluate(id()) -> float().
 evaluate(Id) ->
     LoadedTasks = call({loaded_tasks, Id}),
     Sum = maps:fold(fun
@@ -281,4 +281,3 @@ sleep_until(SleepUntil) ->
         false ->
             ok
     end.
-
