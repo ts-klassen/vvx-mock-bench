@@ -5,7 +5,9 @@
   {mod, {vxmb_app, []}},
   {applications,
    [kernel,
-    stdlib
+    stdlib,
+    cowboy,
+    jsone
    ]},
   {env,[]},
   {modules, []},

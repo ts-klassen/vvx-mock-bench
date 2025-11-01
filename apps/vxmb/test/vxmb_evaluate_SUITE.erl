@@ -56,7 +56,8 @@ set_test_env() ->
         {speaker_count, 2},
         {sleep_min, 1},
         {sleep_max, 2},
-        {nbf_uniform, 1}
+        {nbf_uniform, 1},
+        {http_port, 0}
     ],
     lists:map(fun({Key, Value}) ->
         Previous = case application:get_env(vxmb, Key) of
