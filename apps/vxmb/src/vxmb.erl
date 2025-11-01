@@ -257,6 +257,7 @@ set_engine_speaker_(EId, SId, Doc0) ->
 
 synthesis_(EId, SId, TId, Doc0) ->
     SId = klsn_map:get([loaded_tasks, TId, speaker_id], Doc0),
+    SId = klsn_map:get([engine, EId, speaker_id], Doc0),
     TimeNow = time_now(),
     BlockedUntil0 = klsn_map:get([engine, EId, available_after], Doc0),
     Overhead = klsn_map:get([loaded_tasks, TId, sleep], Doc0),
